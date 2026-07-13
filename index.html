@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Circuit Sprint</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#/">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Circuit Sprint</span>
+      </a>
+      <div class="score-track" aria-live="polite">
+        <div class="score-copy">
+          <span>Points earned</span>
+          <strong><span id="totalPoints">0</span><span id="maxPoints">/0</span></strong>
+        </div>
+        <div class="top-progress" aria-label="Overall unlock progress">
+          <span id="topProgressFill"></span>
+        </div>
+      </div>
+    </header>
+
+    <main id="app" class="app" tabindex="-1"></main>
+
+    <template id="homeTemplate">
+      <section class="section spotlight-section">
+        <div class="section-heading">
+          <h2>Pathways</h2>
+          <p>Solve pathways to earn points for the unlock shop.</p>
+        </div>
+        <div id="pathwayGrid" class="pathway-grid"></div>
+      </section>
+
+      <section class="section unlock-shop">
+        <div class="section-heading">
+          <h2>Unlock Shop</h2>
+          <p>Use earned points to claim the next build item.</p>
+        </div>
+        <div id="unlockGrid" class="unlock-grid"></div>
+      </section>
+    </template>
+
+    <template id="pathwayTemplate">
+      <section class="pathway-header">
+        <a class="back-link" href="#/">Back home</a>
+        <p id="pathwayEyebrow" class="eyebrow"></p>
+        <h1 id="pathwayTitle"></h1>
+        <p id="pathwayDescription"></p>
+      </section>
+      <section id="questionList" class="question-list"></section>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
