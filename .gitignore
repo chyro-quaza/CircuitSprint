@@ -1,0 +1,5 @@
+# Ignore scratch & backup files
+circuitsprint_backup.tar.gz
+test_app_chunk.js
+.DS_Store
+*.log

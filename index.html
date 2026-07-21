@@ -3,54 +3,152 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Circuit Sprint</title>
+    <title>Circuit Sprint.</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <header class="topbar">
+    <header class="sidebar">
       <a class="brand" href="#/">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span>Circuit Sprint</span>
+        <svg class="brand-logo-svg" viewBox="0 0 100 100" width="34" height="34" aria-hidden="true">
+          <circle cx="50" cy="50" r="45" fill="none" stroke="#1ed760" stroke-width="8" />
+          <circle cx="50" cy="50" r="28" fill="none" stroke="#1ed760" stroke-width="6" />
+          <circle cx="50" cy="50" r="10" fill="#1ed760" />
+          <path d="M50 15 L50 35 M50 65 L50 85 M15 50 L35 50 M65 50 L85 50" stroke="#1ed760" stroke-width="4" />
+          <circle cx="30" cy="25" r="4" fill="#000000" />
+          <circle cx="70" cy="75" r="4" fill="#000000" />
+        </svg>
+        <span class="brand-name">Circuit Sprint<span class="title-dot">.</span></span>
       </a>
-      <div class="score-track" aria-live="polite">
-        <div class="score-copy">
-          <span>Points earned</span>
-          <strong><span id="totalPoints">0</span><span id="maxPoints">/0</span></strong>
+      <nav class="sidebar-nav">
+        <a class="nav-item" href="#/">
+          <svg class="home-svg-icon" viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true">
+            <path d="M12.5 3.247a1 1 0 0 0-1 0L4 7.577V20a1 1 0 0 0 1 1h5v-6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v6h5a1 1 0 0 0 1-1V7.577l-7.5-4.33z"/>
+          </svg>
+          <span>Album Library</span>
+        </a>
+        <div class="sidebar-divider"></div>
+        <div class="sidebar-section-title">Pathways</div>
+        <div class="sidebar-pathways-group">
+          <a class="nav-item" href="#/pathway/logic-grooves">
+            <div class="sidebar-mini-cover" style="background: url('logic-cover.png') center / cover no-repeat;"></div>
+            <span>Logic Grooves</span>
+          </a>
+          <a class="nav-item" href="#/pathway/circuit-breaks">
+            <img class="sidebar-mini-cover" src="circuit-cover.png" alt="Circuit Breaks">
+            <span>Circuit Breaks</span>
+          </a>
+          <a class="nav-item" href="#/pathway/code-cuts">
+            <img class="sidebar-mini-cover" src="code-cover.png" alt="Code Cuts">
+            <span>Code Cuts</span>
+          </a>
+          <a class="nav-item" href="#/pathway/flag-session">
+            <img class="sidebar-mini-cover" src="flag-cover.png" alt="Flag Session">
+            <span>Flag Session</span>
+          </a>
+          <a class="nav-item" href="#/pathway/treasure-trails">
+            <div class="sidebar-mini-cover" style="background: url('treasure-cover.png') center / cover no-repeat;"></div>
+            <span>Treasure Trails</span>
+          </a>
         </div>
-        <div class="top-progress" aria-label="Overall unlock progress">
-          <span id="topProgressFill"></span>
-        </div>
-      </div>
+      </nav>
     </header>
 
     <main id="app" class="app" tabindex="-1"></main>
 
+    <footer class="playerbar" aria-live="polite">
+      <div class="now-playing">
+        <span class="mini-cover" aria-hidden="true"></span>
+        <div>
+          <span id="nowPlayingTitle">Circuit Sprint<span class="title-dot">.</span></span>
+          <strong id="nowPlayingSubtitle">Select an album to play</strong>
+        </div>
+      </div>
+      <div class="score-track" aria-live="polite">
+        <div class="top-progress" aria-label="Overall unlock progress">
+          <span id="topProgressFill"></span>
+        </div>
+        <div class="score-copy">
+          <span>Points earned</span>
+          <strong><span id="totalPoints">0</span><span id="maxPoints">/0</span></strong>
+        </div>
+        <div class="player-controls">
+          <button id="prevQuestion" class="skip-button prev-button" type="button" aria-label="Previous question"></button>
+          <button id="playProgress" class="play-button" type="button" aria-label="Animate progress"></button>
+          <button id="nextQuestion" class="skip-button next-button" type="button" aria-label="Next question"></button>
+        </div>
+      </div>
+      <div class="player-meta">
+        <span>Library</span>
+      </div>
+    </footer>
+
     <template id="homeTemplate">
       <section class="section spotlight-section">
         <div class="section-heading">
-          <h2>Pathways</h2>
-          <p>Solve pathways to earn points for the unlock shop.</p>
+          <h2>Albums</h2>
         </div>
         <div id="pathwayGrid" class="pathway-grid"></div>
-      </section>
 
-      <section class="section unlock-shop">
-        <div class="section-heading">
-          <h2>Unlock Shop</h2>
-          <p>Use earned points to claim the next build item.</p>
-        </div>
-        <div id="unlockGrid" class="unlock-grid"></div>
+        <!-- Minimal Spotify-style Deluxe Albums Banner -->
+        <a class="deluxe-horizontal-banner" href="#/deluxe" aria-label="Open Deluxe Albums section">
+          <div class="deluxe-banner-left">
+            <div class="deluxe-banner-title">Deluxe Vault</div>
+            <p class="deluxe-banner-sub">Exclusive challenges unlocked at 350, 750 & 1023 points</p>
+          </div>
+          <div class="deluxe-banner-cta">
+            <span>Explore Vault</span>
+            <span class="cta-arrow">&rarr;</span>
+          </div>
+        </a>
       </section>
     </template>
 
+    <template id="deluxeTemplate">
+      <div class="pathway-container">
+        <a class="back-link" href="#/"><span class="back-arrow">‹</span> Back to Library</a>
+        <section class="deluxe-header">
+          <h1>Deluxe Albums</h1>
+          <p>Exclusive high-tier challenges unlocked by earning total library points.</p>
+        </section>
+        <section class="deluxe-grid-section">
+          <div id="deluxeGrid" class="deluxe-grid"></div>
+        </section>
+      </div>
+    </template>
+
     <template id="pathwayTemplate">
-      <section class="pathway-header">
-        <a class="back-link" href="#/">Back home</a>
-        <p id="pathwayEyebrow" class="eyebrow"></p>
-        <h1 id="pathwayTitle"></h1>
-        <p id="pathwayDescription"></p>
-      </section>
-      <section id="questionList" class="question-list"></section>
+      <div class="pathway-container">
+        <a class="back-link" href="#/"><span class="back-arrow">‹</span> Back to Library</a>
+        <section class="pathway-header">
+          <div id="pathwayArtContainer" class="pathway-art-container"></div>
+          <div class="pathway-header-meta">
+            <span class="eyebrow">ALBUM</span>
+            <h1 id="pathwayTitle"></h1>
+            <p id="pathwayDescription"></p>
+            <div id="pathwayMetaSub" class="pathway-meta-sub"></div>
+          </div>
+        </section>
+
+        <div class="pathway-action-bar">
+          <button class="main-play-btn" type="button" aria-label="Play album"></button>
+          <button class="action-icon-btn" type="button" aria-label="Save to Your Library">♡</button>
+          <button class="action-icon-btn" type="button" aria-label="More options">• • •</button>
+        </div>
+        
+        <div id="pathwayNotice" class="pathway-notice" hidden></div>
+        
+        <section id="activeQuestionSection" class="active-question-section"></section>
+        
+        <section class="tracklist-section">
+          <div class="tracklist-header-row">
+            <span class="track-col-num">#</span>
+            <span class="track-col-title">Title</span>
+            <span class="track-col-points">Points</span>
+            <span class="track-col-status">Status</span>
+          </div>
+          <div id="trackList" class="track-list"></div>
+        </section>
+      </div>
     </template>
 
     <script src="app.js"></script>
