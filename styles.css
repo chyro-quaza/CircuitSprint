@@ -1512,7 +1512,7 @@ body {
   background: #ffffff;
   box-shadow: 0 0 8px #ffffff;
   border-radius: 2px;
-  transition: width 0.2s linear;
+  transition: width 0.05s linear;
 }
 
 @keyframes padlock-shake {

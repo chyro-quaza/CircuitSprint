@@ -315,16 +315,29 @@ function savePenaltyState(timeMs) {
   } catch (err) {}
 }
 
+let penaltyTotalDurationMs = 30000;
+
 function isPenaltyActive() {
   return Date.now() < penaltyEndTime;
 }
 
 function startPenaltyTimer(durationSeconds = 30) {
-  penaltyEndTime = Date.now() + durationSeconds * 1000;
+  penaltyTotalDurationMs = durationSeconds * 1000;
+  penaltyEndTime = Date.now() + penaltyTotalDurationMs;
   savePenaltyState(penaltyEndTime);
-  updatePenaltyDisplay();
-  if (penaltyInterval) clearInterval(penaltyInterval);
-  penaltyInterval = setInterval(updatePenaltyDisplay, 200);
+  ensurePenaltyLoop();
+}
+
+function ensurePenaltyLoop() {
+  if (isPenaltyActive()) {
+    updatePenaltyDisplay();
+    if (!penaltyInterval) {
+      penaltyInterval = setInterval(updatePenaltyDisplay, 50);
+    }
+  } else if (penaltyInterval) {
+    clearInterval(penaltyInterval);
+    penaltyInterval = null;
+  }
 }
 
 function updatePenaltyDisplay() {
@@ -334,25 +347,34 @@ function updatePenaltyDisplay() {
   if (remainingMs > 0) {
     const remainingSec = Math.ceil(remainingMs / 1000);
     const secStr = remainingSec.toString().padStart(2, "0");
-    const percent = Math.min(100, Math.max(0, (remainingMs / 30000) * 100));
+    const percent = Math.min(100, Math.max(0, (remainingMs / (penaltyTotalDurationMs || 30000)) * 100));
 
     if (feedbackElem) {
       feedbackElem.hidden = false;
       feedbackElem.style.removeProperty("color");
-      feedbackElem.innerHTML = `
-        <div class="cooldown-badge-wrap">
-          <div class="cooldown-badge-header">
-            <svg class="cooldown-lock-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-            </svg>
-            <span>SYSTEM COOLDOWN: ${secStr}s</span>
+
+      let badgeWrap = feedbackElem.querySelector(".cooldown-badge-wrap");
+      if (!badgeWrap) {
+        feedbackElem.innerHTML = `
+          <div class="cooldown-badge-wrap">
+            <div class="cooldown-badge-header">
+              <svg class="cooldown-lock-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              <span class="cooldown-timer-text">SYSTEM COOLDOWN: ${secStr}s</span>
+            </div>
+            <div class="cooldown-progress-track">
+              <div class="cooldown-progress-bar" style="width: ${percent.toFixed(2)}%;"></div>
+            </div>
           </div>
-          <div class="cooldown-progress-track">
-            <div class="cooldown-progress-bar" style="width: ${percent}%;"></div>
-          </div>
-        </div>
-      `;
+        `;
+      } else {
+        const timerText = badgeWrap.querySelector(".cooldown-timer-text");
+        const progressBar = badgeWrap.querySelector(".cooldown-progress-bar");
+        if (timerText) timerText.textContent = `SYSTEM COOLDOWN: ${secStr}s`;
+        if (progressBar) progressBar.style.width = `${percent.toFixed(2)}%`;
+      }
     }
 
     document.querySelectorAll("#activeQuestionSection button, #activeQuestionSection input").forEach((el) => {
@@ -371,15 +393,6 @@ function updatePenaltyDisplay() {
     document.querySelectorAll("#activeQuestionSection button, #activeQuestionSection input").forEach((el) => {
       el.disabled = false;
     });
-  }
-}
-
-function initPenaltyOnLoad() {
-  if (isPenaltyActive()) {
-    updatePenaltyDisplay();
-    if (!penaltyInterval) {
-      penaltyInterval = setInterval(updatePenaltyDisplay, 200);
-    }
   }
 }
 
@@ -1302,9 +1315,7 @@ function bindVirtualKeypad(activeSection, targetInputResolver) {
 
 function renderActiveQuestion(pathway, questionIndex) {
   _renderActiveQuestionContent(pathway, questionIndex);
-  if (isPenaltyActive()) {
-    updatePenaltyDisplay();
-  }
+  ensurePenaltyLoop();
 }
 
 function _renderActiveQuestionContent(pathway, questionIndex) {
@@ -1862,6 +1873,7 @@ function setupGlobalPlayerControls() {
 }
 
 function render() {
+  ensurePenaltyLoop();
   renderScore();
 
   const hash = location.hash || "#/";
