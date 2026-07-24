@@ -427,444 +427,709 @@ function updatePenaltyDisplay() {
 
 const pathways = [
   {
-    id: "logic-grooves",
-    title: "Logic Grooves",
-    artist: "DJ Boolean & The De Morgans",
-    description: "Boolean gates, truth tables, and bit-level reasoning.",
-    accent: "#1ed760",
-    icon: "gates",
-    coverImage: "logic-cover.png",
-    coverZoom: "cover",
-    coverPosition: "center",
-    questions: [
+    "id": "logic-grooves",
+    "title": "Logic Grooves",
+    "artist": "DJ Boolean & The De Morgans",
+    "description": "Boolean gates, truth tables, and bit-level reasoning.",
+    "accent": "#1ed760",
+    "icon": "gates",
+    "coverImage": "logic-cover.png",
+    "coverZoom": "cover",
+    "coverPosition": "center",
+    "questions": [
       {
-        id: "logic-1",
-        title: "Bohemian Boolean",
-        prompt: "Simplify the Boolean expression: Y = (A + B)' + (A + B')'",
-        answer: ["A'", "A`", "A'", "a'", "a`"],
-        points: 35
-      },
-      {
-        id: "logic-2",
-        title: "Stairway to Logic",
-        prompt: "Simplify the Boolean expression: Y = (A + B + C)(A + B + C')",
-        answer: ["A+B", "A + B", "a+b", "a + b", "(a+b)"],
-        points: 35
-      },
-      {
-        id: "logic-3",
-        title: "Absorption Child O' Mine",
-        prompt: "Simplify the Boolean expression: Y = (A + B')(A' + B)(A + B)",
-        answer: ["AB", "A·B", "A*B", "A.B", "A B", "ab", "a·b", "a*b"],
-        points: 35
-      },
-      {
-        id: "logic-4",
-        title: "Hotel Inversion",
-        prompt: "Simplify the Boolean expression: Y = ((AB + C')')'",
-        answer: ["AB+C'", "AB + C'", "A·B+C'", "A·B + C'", "ab+c'", "ab + c'"],
-        points: 35
-      },
-      {
-        id: "logic-5",
-        title: "Smells Like XOR Spirit",
-        prompt: "Fill in the output column Y for the expression: Y = (A ⊕ B)C",
-        displayTruthTable: true,
-        answers: [
-          ["0"], ["0"], ["0"], ["1"],
-          ["0"], ["1"], ["0"], ["0"]
+        "id": "logic-1",
+        "title": "Bohemian Boolean",
+        "prompt": "Simplify the Boolean expression: Y = (A + B)' + (A + B')'",
+        "answer": [
+          "a80c8a675a0e6f40d1c874ac945a365c65e2dfc5cf33d7b208a5a6ad98cfaaba",
+          "5a0ff8a1be6b7db671f98e529dc6594ae99f13c048c5456e3856734436b78c42",
+          "a80c8a675a0e6f40d1c874ac945a365c65e2dfc5cf33d7b208a5a6ad98cfaaba",
+          "a80c8a675a0e6f40d1c874ac945a365c65e2dfc5cf33d7b208a5a6ad98cfaaba",
+          "5a0ff8a1be6b7db671f98e529dc6594ae99f13c048c5456e3856734436b78c42"
         ],
-        points: 35
+        "points": 35
       },
       {
-        id: "logic-6",
-        title: "Another Parity in the Wall",
-        prompt: "Find the simplified Boolean expression Y for the truth table below:",
-        displayTruthTableReadOnly: true,
-        truthTableData: [
-          ["0", "0", "0", "0"],
-          ["0", "0", "1", "1"],
-          ["0", "1", "0", "0"],
-          ["0", "1", "1", "1"],
-          ["1", "0", "0", "1"],
-          ["1", "0", "1", "0"],
-          ["1", "1", "0", "1"],
-          ["1", "1", "1", "0"]
+        "id": "logic-2",
+        "title": "Stairway to Logic",
+        "prompt": "Simplify the Boolean expression: Y = (A + B + C)(A + B + C')",
+        "answer": [
+          "300273daf0bb57c239f83585d71ced54ce6b3b5fb81615abbeeb3f9cf5fae92f",
+          "cb23f6635a581786f970184faab1f816c87e8905847c510860baca4f63aa2619",
+          "300273daf0bb57c239f83585d71ced54ce6b3b5fb81615abbeeb3f9cf5fae92f",
+          "cb23f6635a581786f970184faab1f816c87e8905847c510860baca4f63aa2619",
+          "276da98621f88f8c3665af380d00a23c218cab82148981648396ecdf5ab10646"
         ],
-        answer: ["A⊕C", "A ⊕ C", "A⊕C", "A XOR C", "A xor C", "a⊕c", "a ⊕ c", "a xor c", "A+C", "A+C'"],
-        points: 36
-      }
-    ]
-  },
-  {
-    id: "circuit-breaks",
-    title: "Circuit Breaks",
-    artist: "Resistor Resistance",
-    description: "Resistors, LEDs, power rails, and practical electronics.",
-    accent: "#4cc9f0",
-    icon: "circuit",
-    coverImage: "circuit-cover.png",
-    coverZoom: "cover",
-    coverPosition: "center",
-    questions: [
-      {
-        id: "circuit-1",
-        title: "Under Voltage",
-        prompt: "Two 10 kΩ resistors are connected in series across a 10 V supply. What voltage in volts (V) is measured at the midpoint between the two resistors?",
-        answer: ["5", "5V", "5 V", "5 volts"],
-        points: 25
+        "points": 35
       },
       {
-        id: "circuit-2",
-        title: "Resistor in the Sky",
-        prompt: "A resistor has 4 color bands followed by a gold tolerance band: Yellow, Violet, Orange, Gold. What is its nominal resistance value in kilohms (kΩ)?",
-        answer: ["47", "47k", "47 k", "47 kohm", "47000"],
-        points: 25
-      },
-      {
-        id: "circuit-3",
-        title: "Analog Read Me Maybe",
-        prompt: "What built-in C++ function is used to read an analog input voltage on an Arduino?",
-        answer: ["analogRead()", "analogRead", "analogread()", "analogread"],
-        points: 25
-      },
-      {
-        id: "circuit-4",
-        title: "Currentstruck",
-        prompt: "A resistor has 10 V across it and carries a current of 0.2 A. What is the power dissipated by the resistor in watts (W)?",
-        answer: ["2", "2W", "2 W", "2 watts"],
-        points: 25
-      },
-      {
-        id: "circuit-5",
-        title: "Comfortably Grounded",
-        prompt: "An ultrasonic distance sensor emits a pulse that reflects off an obstacle and returns in time duration t = 1000 µs. Given the speed of sound v = 0.034 cm/µs, calculate distance d in centimeters (cm) using: d = (v × t) / 2",
-        answer: ["17", "17cm", "17 cm"],
-        points: 25
-      },
-      {
-        id: "circuit-6",
-        title: "Silicon Haze",
-        prompt: "How many dedicated GND (Ground) header pins are present across the power and digital pin headers of a standard Arduino Uno board?",
-        answer: ["3", "3 pins", "three"],
-        points: 25
-      },
-      {
-        id: "circuit-7",
-        title: "Born to Loop",
-        prompt: "An LED is connected to Arduino pin 8 through a 220 Ω resistor. The LED's cathode is connected to pin 8, and its anode is connected to +5 V. Fill in the blank to light up the LED:\n\ndigitalWrite(8, ******);",
-        answer: ["LOW", "low", "0"],
-        points: 25
-      },
-      {
-        id: "circuit-8",
-        title: "Bitwise Jean",
-        prompt: "An Arduino Uno features a 10-bit ADC. What is the maximum integer value returned by calling analogRead()?",
-        answer: ["1023"],
-        points: 25
-      }
-    ]
-  },
-  {
-    id: "code-cuts",
-    title: "Code Cuts",
-    artist: "Stack Orchestra",
-    description: "Embedded loops, pin states, and C/Python output prediction challenges.",
-    accent: "#ffd166",
-    icon: "code",
-    coverImage: "code-cover.png",
-    coverZoom: "cover",
-    coverPosition: "center",
-    questions: [
-      {
-        id: "code-1",
-        title: "Increment Dreams",
-        prompt: "Predict the output of the C code snippet:\n\n#include <stdio.h>\n\nint main() {\n    int x = 4;\n    printf(\"%d\\n\", x++);\n    printf(\"%d\\n\", ++x);\n    return 0;\n}",
-        multipleOutputs: [
-          { label: "Output 1", answer: ["4"] },
-          { label: "Output 2", answer: ["6"] }
+        "id": "logic-3",
+        "title": "Absorption Child O' Mine",
+        "prompt": "Simplify the Boolean expression: Y = (A + B')(A' + B)(A + B)",
+        "answer": [
+          "fb8e20fc2e4c3f248c60c39bd652f3c1347298bb977b8b4d5903b85055620603",
+          "afebecfe11e9b0578201aa259da18951bc51e3a3fc5a320e4cf6e3c41c904a9e",
+          "15eb0a792505b1914ccd7f8d39a6b0f1985d86b37566faf73a589ea9e8454d8b",
+          "2e7336dc8eba87ef472df568c35482abf2575dc3e5eac0c5c62b8ffaeac2c934",
+          "c8687a08aa5d6ed2044328fa6a697ab8e96dc34291e8c2034ae8c38e6fcc6d65",
+          "fb8e20fc2e4c3f248c60c39bd652f3c1347298bb977b8b4d5903b85055620603",
+          "afebecfe11e9b0578201aa259da18951bc51e3a3fc5a320e4cf6e3c41c904a9e",
+          "15eb0a792505b1914ccd7f8d39a6b0f1985d86b37566faf73a589ea9e8454d8b"
         ],
-        points: 25
+        "points": 35
       },
       {
-        id: "code-2",
-        title: "Single Equals Like You",
-        prompt: "Predict the output of the C code snippet:\n\n#include <stdio.h>\n\nint main() {\n    int a = 10;\n\n    if (a = 5)\n        printf(\"YES\");\n    else\n        printf(\"NO\");\n\n    return 0;\n}",
-        answer: ["YES", "yes"],
-        points: 25
-      },
-      {
-        id: "code-3",
-        title: "Don't Stop Believin' (in Exponents)",
-        prompt: "What is printed by this Python snippet?\n\na = 3\nb = 4\nc = 2\n\nprint(a + b * c ** 2)",
-        answer: ["19"],
-        points: 25
-      },
-      {
-        id: "code-4",
-        title: "Shape of Division",
-        prompt: "Predict the output of the C code snippet:\n\n#include <stdio.h>\n\nint main() {\n    int x = 7;\n    int y = 3;\n\n    printf(\"%d\\n\", x * y + x / y);\n    return 0;\n}",
-        answer: ["23"],
-        points: 25
-      },
-      {
-        id: "code-5",
-        title: "Uptown Double Slash",
-        prompt: "What is printed by this Python snippet?\n\nx = 2\n\nprint((x + 3) * (x ** 3 - 1) // 5)",
-        answer: ["7"],
-        points: 25
-      },
-      {
-        id: "code-6",
-        title: "Looping in the Dark",
-        prompt: "What value of x is printed after executing this Python loop?\n\nx = 3\n\nfor i in range(1, 5):\n    x = x * 2 - i\n\nprint(x)",
-        answer: ["22"],
-        points: 25
-      },
-      {
-        id: "code-7",
-        title: "Boolean Rhapsody",
-        prompt: "What boolean values are printed by this Python snippet?\n\na = False\nb = True\nc = False\n\nprint(a or b and c)\nprint((a or b) and c)",
-        multipleOutputs: [
-          { label: "Output 1", answer: ["false"] },
-          { label: "Output 2", answer: ["false"] }
+        "id": "logic-4",
+        "title": "Hotel Inversion",
+        "prompt": "Simplify the Boolean expression: Y = ((AB + C')')'",
+        "answer": [
+          "0c0893b65d115fada2efbff44f4168f7189f3996036fa67879152511846a072a",
+          "39285178d3444cf0c85d3c46cbb0e20327f95f24ff2714be17ba189bc6315a0f",
+          "716a961476f7cb87734b0f046c2fa2782c0636665a7de460a2f2f18e73c75b25",
+          "1d274ae72dd18a2441135b1664fe67ad94df78d49c9a10ab5d1648fc3d47fb98",
+          "0c0893b65d115fada2efbff44f4168f7189f3996036fa67879152511846a072a",
+          "39285178d3444cf0c85d3c46cbb0e20327f95f24ff2714be17ba189bc6315a0f"
         ],
-        points: 25
+        "points": 35
       },
       {
-        id: "code-8",
-        title: "Take On Truth",
-        prompt: "What boolean output is printed by this Python snippet?\n\nx = 7\ny = 4\nz = 10\n\nprint((x > y and z < 20) or not (x + y == z))",
-        answer: ["True", "true"],
-        points: 25
-      }
-    ]
-  },
-  {
-    id: "flag-session",
-    title: "Flag Session",
-    artist: "Base64 Battalion",
-    description: "Decoding, base conversions, and hidden string flags.",
-    accent: "#ff4fd8",
-    icon: "flag",
-    coverImage: "flag-cover.png",
-    coverZoom: "cover",
-    coverPosition: "center",
-    questions: [
-      {
-        id: "flag-caesar",
-        title: "Caesar's Cipher O' Mine",
-        prompt: "A Roman general flanks his enemies by shifting his soldiers 3 positions to the right. Mid-battle, his messenger drops an encoded scroll in the mud:\n\nDWWDFN WKH HQHPB DW GDZQ\n\nFind the general's lost message.",
-        answer: ["attack the enemy at dawn", "attacktheenemyatdawn"],
-        points: 35
-      },
-      {
-        id: "flag-binary-add",
-        title: "Binary Add It",
-        prompt: "Add the following binary numbers together, then convert the sum to decimal:\n\n1001011110101₂ + 110110101011₂",
-        answer: ["8352"],
-        points: 35
-      },
-      {
-        id: "flag-2",
-        title: "Hex on Fire",
-        prompt: "Convert hex 0x9FC to binary and decimal.",
-        multipleOutputs: [
-          { label: "Binary", answer: ["100111111100", "100111111100₂"] },
-          { label: "Decimal", answer: ["2556"] }
+        "id": "logic-5",
+        "title": "Smells Like XOR Spirit",
+        "prompt": "Fill in the output column Y for the expression: Y = (A ⊕ B)C",
+        "displayTruthTable": true,
+        "answers": [
+          [
+            "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+          ],
+          [
+            "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+          ],
+          [
+            "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+          ],
+          [
+            "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+          ],
+          [
+            "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+          ],
+          [
+            "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+          ],
+          [
+            "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+          ],
+          [
+            "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+          ]
         ],
-        points: 35
+        "points": 35
       },
       {
-        id: "flag-hex-vault",
-        title: "Welcome to the Hex Vault",
-        prompt: "0xBEE",
-        answer: ["3054"],
-        isHexVaultQuestion: true,
-        points: 35
-      },
-      {
-        id: "flag-morse",
-        title: "Radioactive Morse",
-        prompt: "Listen closely to the audio transmission from the play button above.\n\nWhat phrase is being transmitted?",
-        answer: ["hello ween", "helloween", "hello-ween", "hello_ween"],
-        isMorseQuestion: true,
-        morseCode: ".... . .-.. .-.. --- / .-- . . -.",
-        points: 37
-      },
-      {
-        id: "flag-5",
-        title: "Sweet Dreams of XOR",
-        prompt: "XOR 1100 with 1010. What is the 4-bit binary result?",
-        answer: ["0110", "110"],
-        points: 35
-      }
-    ]
-  },
-  {
-    id: "treasure-trails",
-    title: "Treasure Trails",
-    artist: "Sir Vibesalot",
-    description: "Treasure Hunt: Collect all key words from around the castle to unlock the final passcode vault.",
-    accent: "#a78bfa",
-    icon: "key",
-    coverImage: "treasure-cover.png",
-    unlockThreshold: 500,
-    questions: [
-      {
-        id: "treasure-1",
-        title: "Eye of the Passcode",
-        prompt: "Collect all the key words from around the castle to assemble the passcode! Descend to the castle's lowest halls where the coldest spring grants relief to the passing traveller.",
-        answer: [
-          "by the power of greyskull",
-          "by the power of grayskull",
-          "bythepowerofgreyskull",
-          "bythepowerofgrayskull"
+        "id": "logic-6",
+        "title": "Another Parity in the Wall",
+        "prompt": "Find the simplified Boolean expression Y for the truth table below:",
+        "displayTruthTableReadOnly": true,
+        "truthTableData": [
+          [
+            "0",
+            "0",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "1",
+            "1"
+          ],
+          [
+            "0",
+            "1",
+            "0",
+            "0"
+          ],
+          [
+            "0",
+            "1",
+            "1",
+            "1"
+          ],
+          [
+            "1",
+            "0",
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "0",
+            "1",
+            "0"
+          ],
+          [
+            "1",
+            "1",
+            "0",
+            "1"
+          ],
+          [
+            "1",
+            "1",
+            "1",
+            "0"
+          ]
         ],
-        points: 200
+        "answer": [
+          "18713a5cf62cba8bf88d616b628176e7fa71a24393c8ac4509485446e0ff633c",
+          "efc62beb693a50e2f5b6feefa4484d2f30a06d29bf9b231eb55b90ab309a6b33",
+          "18713a5cf62cba8bf88d616b628176e7fa71a24393c8ac4509485446e0ff633c",
+          "33b45a1fa9a68f6d85e8969da9a4f594b5347a32b835268eabca8fbc3d79d286",
+          "33b45a1fa9a68f6d85e8969da9a4f594b5347a32b835268eabca8fbc3d79d286",
+          "18713a5cf62cba8bf88d616b628176e7fa71a24393c8ac4509485446e0ff633c",
+          "efc62beb693a50e2f5b6feefa4484d2f30a06d29bf9b231eb55b90ab309a6b33",
+          "33b45a1fa9a68f6d85e8969da9a4f594b5347a32b835268eabca8fbc3d79d286",
+          "3d7edde33628331676b39e19a3f2bdb3c583960ad8d865351a32e2ace7d8e02d",
+          "d2efc2d5157346e613994ba838cc839fc8ea666994162ed0ab4b86eaa00b9eea"
+        ],
+        "points": 36
       }
     ]
   },
   {
-    id: "deluxe-1",
-    title: "Logic Gate Symphony",
-    artist: "VIP Master Series",
-    description: "Exclusive Tier 1 Deluxe Challenge: Multi-stage gate networks, cascaded parity, and wire fault analysis.",
-    accent: "#ffd166",
-    icon: "gates",
-    coverImage: "deluxe1-cover.png",
-    coverZoom: "cover",
-    coverPosition: "center",
-    unlockThreshold: 350,
-    isDeluxe: true,
-    questions: [
+    "id": "circuit-breaks",
+    "title": "Circuit Breaks",
+    "artist": "Resistor Resistance",
+    "description": "Resistors, LEDs, power rails, and practical electronics.",
+    "accent": "#4cc9f0",
+    "icon": "circuit",
+    "coverImage": "circuit-cover.png",
+    "coverZoom": "cover",
+    "coverPosition": "center",
+    "questions": [
       {
-        id: "deluxe1-1",
-        title: "Seven Nation Network",
-        prompt: "A 3-level logic gate network has inputs A, B, C, D. An XOR gate takes (A, B). A NOR gate takes (C, D). The outputs of both gates feed into a final NAND gate. Which Boolean expression matches this circuit output Y?",
-        answer: ["((A⊕B)+(C+D)')'", "((A ⊕ B) + (C + D)')'", "((A⊕B)(C+D)')'", "((A ⊕ B)(C + D)')'", "((A⊕B)+(C+D)')'", "NAND(XOR(A,B), NOR(C,D))"],
-        points: 35
+        "id": "circuit-1",
+        "title": "Under Voltage",
+        "prompt": "Two 10 kΩ resistors are connected in series across a 10 V supply. What voltage in volts (V) is measured at the midpoint between the two resistors?",
+        "answer": [
+          "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
+          "83bb6a011fa0667463a29560f6d0143b124f47d1f433885bada5d1ff0f532677",
+          "b641ef14c435392513212ee826c91fbce1fa4d34f624d7e720587874d2a3540c",
+          "7585c0c33fa45191f9d48206e847ed3f7a2f856890226388530165fb25d5be80"
+        ],
+        "points": 25
       },
       {
-        id: "deluxe1-2",
-        title: "Parity Like It's 1999",
-        prompt: "A 3-bit odd parity generator circuit (Output Y = 1 when total number of 1s in A, B, C is odd) uses two 2-input logic gates in series: Gate 1 takes (A, B), and Gate 2 takes (Output of Gate 1, C). An engineer mistakenly used an XNOR gate for Gate 2 instead of an XOR gate. Which single gate is incorrect?",
-        answer: ["Gate 2", "gate 2", "XNOR", "XNOR gate", "the XNOR gate", "gate 2 (XNOR)"],
-        points: 35
+        "id": "circuit-2",
+        "title": "Resistor in the Sky",
+        "prompt": "A resistor has 4 color bands followed by a gold tolerance band: Yellow, Violet, Orange, Gold. What is its nominal resistance value in kilohms (kΩ)?",
+        "answer": [
+          "31489056e0916d59fe3add79e63f095af3ffb81604691f21cad442a85c7be617",
+          "f707e5a262395da6ee9b75f4e7621e1f2c94051922aa6e8c115be72ce548da52",
+          "67e888236d685cdbf4252f0c0fb72145b96a782b47652f17d69ae65a3bd1ea70",
+          "0871dc36d071da08fbcbdec9b059d4fbc0f2289a5ad96cbd128e9dd855ffe10e",
+          "0ef64799320c7f931737def7b9581e89529020c8c4a9595b3c4bfab954624429"
+        ],
+        "points": 25
       },
       {
-        id: "deluxe1-3",
-        title: "Highway to MUX",
-        prompt: "In an active-high 4-to-1 Multiplexer with Select lines (S1, S0) driving 4 internal AND gates, an engineer wants to route Input I2 (binary 10) to output when S1=1, S0=0. However, Gate 2 receives (I2, S1, S0) instead of (I2, S1, S0'). Which one select wire (S1 or S0) is connected directly without an inverter, causing the wrong selection?",
-        answer: ["S0", "s0", "S0 wire", "wire S0", "S0 select wire"],
-        points: 35
+        "id": "circuit-3",
+        "title": "Analog Read Me Maybe",
+        "prompt": "What built-in C++ function is used to read an analog input voltage on an Arduino?",
+        "answer": [
+          "7013b141655b2558d9bcdbac307c37a3778fd960fae0f1c006007037802f098a",
+          "a1ea8463f7c295bf8428ecde634a7721f9a2f22f478e56997d359f6b98dac919",
+          "7013b141655b2558d9bcdbac307c37a3778fd960fae0f1c006007037802f098a",
+          "a1ea8463f7c295bf8428ecde634a7721f9a2f22f478e56997d359f6b98dac919"
+        ],
+        "points": 25
       },
       {
-        id: "deluxe1-4",
-        title: "Livin' on a Combinational",
-        prompt: "Consider a 4-input logic function Y = (A · B)' · (C ⊕ D). Out of all 16 possible 4-bit binary input combinations (ABCD), how many input combinations produce a HIGH (1) output?",
-        answer: ["6"],
-        points: 35
+        "id": "circuit-4",
+        "title": "Currentstruck",
+        "prompt": "A resistor has 10 V across it and carries a current of 0.2 A. What is the power dissipated by the resistor in watts (W)?",
+        "answer": [
+          "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+          "7c1c5ee5c6a4dec209832011c36b43cdfdb105c27623dfa695e20cc03ec7b06d",
+          "2befad5622b9dc1612bd60f611e48eb99ba0e16931ed1305657b2a44d7399872",
+          "641ae49f8b882045e5a9298acbff70f0bcd3d1c31c607acd3f959ddd36ea1b66"
+        ],
+        "points": 25
       },
       {
-        id: "deluxe1-5",
-        title: "Masked Variable in the Dark",
-        prompt: "Evaluate the 4-input Boolean function: Y = A · B + A · B' + (C ⊕ C') · D · 0. Simplifying this circuit shows one or more inputs are completely masked. Which input (A, B, C, or D) has no effect on the output?",
-        answer: ["B", "b", "C", "c", "D", "d", "B, C, D"],
-        points: 35
+        "id": "circuit-5",
+        "title": "Comfortably Grounded",
+        "prompt": "An ultrasonic distance sensor emits a pulse that reflects off an obstacle and returns in time duration t = 1000 µs. Given the speed of sound v = 0.034 cm/µs, calculate distance d in centimeters (cm) using: d = (v × t) / 2",
+        "answer": [
+          "4523540f1504cd17100c4835e85b7eefd49911580f8efff0599a8f283be6b9e3",
+          "093b8c1c1bada400c227a898aec4d85e564734a43798bcf69caf3fa6b91e33f6",
+          "9b7d31dd691488bb809fd7f449ac05b4b4eb3f4005d38ab8ad4aa7dad3cf4f56"
+        ],
+        "points": 25
       },
       {
-        id: "deluxe1-6",
-        title: "Ignition (Remix Vector)",
-        prompt: "An active-high emergency beacon LED is driven by Y = (A · B) + (C · D'). Which 4-bit binary input vector (ABCD) with A=1, B=1, C=0, D=1 is guaranteed to turn the LED ON?",
-        answer: ["1101", "ABCD=1101", "1 1 0 1"],
-        points: 35
+        "id": "circuit-6",
+        "title": "Silicon Haze",
+        "prompt": "How many dedicated GND (Ground) header pins are present across the power and digital pin headers of a standard Arduino Uno board?",
+        "answer": [
+          "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce",
+          "775b0a938d2644c1cae27c43ea65a3eb48e8dbe25627de7925243fcc1ed3cd4b",
+          "8b5b9db0c13db24256c829aa364aa90c6d2eba318b9232a4ab9313b954d3555f"
+        ],
+        "points": 25
+      },
+      {
+        "id": "circuit-7",
+        "title": "Born to Loop",
+        "prompt": "An LED is connected to Arduino pin 8 through a 220 Ω resistor. The LED's cathode is connected to pin 8, and its anode is connected to +5 V. Fill in the blank to light up the LED:\n\ndigitalWrite(8, ******);",
+        "answer": [
+          "6c1ff09db3a73dc4a854f695d20d174a848d55f2d743bab2ee1f8fc75be454f3",
+          "6c1ff09db3a73dc4a854f695d20d174a848d55f2d743bab2ee1f8fc75be454f3",
+          "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+        ],
+        "points": 25
+      },
+      {
+        "id": "circuit-8",
+        "title": "Bitwise Jean",
+        "prompt": "An Arduino Uno features a 10-bit ADC. What is the maximum integer value returned by calling analogRead()?",
+        "answer": [
+          "6629ddae3736e894e89cb4a1300a9d2c5c0fad418f8ea06a341b81f2a98bb491"
+        ],
+        "points": 25
       }
     ]
   },
   {
-    id: "deluxe-2",
-    title: "Logic Circuit Suite",
-    artist: "VIP Master Series",
-    description: "Exclusive Tier 2 Deluxe Challenge: Ripple carry delays, priority encoders, synchronous counters, and SR latch hazards.",
-    accent: "#ff4fd8",
-    icon: "circuit",
-    coverImage: "deluxe2-cover.png",
-    coverZoom: "cover",
-    coverPosition: "center",
-    unlockThreshold: 750,
-    isDeluxe: true,
-    questions: [
+    "id": "code-cuts",
+    "title": "Code Cuts",
+    "artist": "Stack Orchestra",
+    "description": "Embedded loops, pin states, and C/Python output prediction challenges.",
+    "accent": "#ffd166",
+    "icon": "code",
+    "coverImage": "code-cover.png",
+    "coverZoom": "cover",
+    "coverPosition": "center",
+    "questions": [
       {
-        id: "deluxe2-1",
-        title: "Ripple Carry in the Deep",
-        prompt: "A 4-bit Ripple Carry Adder consists of 4 cascaded Full Adders. If each Full Adder has a propagation delay of 12 nanoseconds (ns) for the carry signal to stabilize, what is the total worst-case propagation delay in nanoseconds (ns) for the final Carry-Out to stabilize?",
-        answer: ["48", "48ns", "48 ns"],
-        points: 40
+        "id": "code-1",
+        "title": "Increment Dreams",
+        "prompt": "Predict the output of the C code snippet:\n\n#include <stdio.h>\n\nint main() {\n    int x = 4;\n    printf(\"%d\\n\", x++);\n    printf(\"%d\\n\", ++x);\n    return 0;\n}",
+        "multipleOutputs": [
+          {
+            "label": "Output 1",
+            "answer": [
+              "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+            ]
+          },
+          {
+            "label": "Output 2",
+            "answer": [
+              "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683"
+            ]
+          }
+        ],
+        "points": 25
       },
       {
-        id: "deluxe2-2",
-        title: "Encoder of the Night",
-        prompt: "A 4-to-2 Priority Encoder receives active-high inputs (D3, D2, D1, D0) where D3 has highest priority. If the input vector is D3=0, D2=1, D1=1, D0=1, what 2-bit binary output (Y1 Y0) will the encoder produce?",
-        answer: ["10", "Y1=1 Y0=0", "1 0"],
-        points: 40
+        "id": "code-2",
+        "title": "Single Equals Like You",
+        "prompt": "Predict the output of the C code snippet:\n\n#include <stdio.h>\n\nint main() {\n    int a = 10;\n\n    if (a = 5)\n        printf(\"YES\");\n    else\n        printf(\"NO\");\n\n    return 0;\n}",
+        "answer": [
+          "8a798890fe93817163b10b5f7bd2ca4d25d84c52739a645a889c173eee7d9d3d",
+          "8a798890fe93817163b10b5f7bd2ca4d25d84c52739a645a889c173eee7d9d3d"
+        ],
+        "points": 25
       },
       {
-        id: "deluxe2-3",
-        title: "Count On Me",
-        prompt: "A 3-bit modulo-8 binary up-counter is initialized at state 101₂ (decimal 5). After 4 active clock pulses, what is the 3-bit binary state of the counter?",
-        answer: ["001", "001₂", "1"],
-        points: 40
+        "id": "code-3",
+        "title": "Don't Stop Believin' (in Exponents)",
+        "prompt": "What is printed by this Python snippet?\n\na = 3\nb = 4\nc = 2\n\nprint(a + b * c ** 2)",
+        "answer": [
+          "9400f1b21cb527d7fa3d3eabba93557a18ebe7a2ca4e471cfe5e4c5b4ca7f767"
+        ],
+        "points": 25
       },
       {
-        id: "deluxe2-4",
-        title: "Latch Me If You Can",
-        prompt: "In an active-HIGH NOR-based SR Latch, what binary input combination (S, R) causes an unstable / invalid forbidden state where both Q and Q' outputs are forced to 0?",
-        answer: ["11", "S=1 R=1", "S=1, R=1", "1,1", "1 1"],
-        points: 40
+        "id": "code-4",
+        "title": "Shape of Division",
+        "prompt": "Predict the output of the C code snippet:\n\n#include <stdio.h>\n\nint main() {\n    int x = 7;\n    int y = 3;\n\n    printf(\"%d\\n\", x * y + x / y);\n    return 0;\n}",
+        "answer": [
+          "535fa30d7e25dd8a49f1536779734ec8286108d115da5045d77f3b4185d8f790"
+        ],
+        "points": 25
+      },
+      {
+        "id": "code-5",
+        "title": "Uptown Double Slash",
+        "prompt": "What is printed by this Python snippet?\n\nx = 2\n\nprint((x + 3) * (x ** 3 - 1) // 5)",
+        "answer": [
+          "7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451"
+        ],
+        "points": 25
+      },
+      {
+        "id": "code-6",
+        "title": "Looping in the Dark",
+        "prompt": "What value of x is printed after executing this Python loop?\n\nx = 3\n\nfor i in range(1, 5):\n    x = x * 2 - i\n\nprint(x)",
+        "answer": [
+          "785f3ec7eb32f30b90cd0fcf3657d388b5ff4297f2f9716ff66e9b69c05ddd09"
+        ],
+        "points": 25
+      },
+      {
+        "id": "code-7",
+        "title": "Boolean Rhapsody",
+        "prompt": "What boolean values are printed by this Python snippet?\n\na = False\nb = True\nc = False\n\nprint(a or b and c)\nprint((a or b) and c)",
+        "multipleOutputs": [
+          {
+            "label": "Output 1",
+            "answer": [
+              "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+            ]
+          },
+          {
+            "label": "Output 2",
+            "answer": [
+              "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+            ]
+          }
+        ],
+        "points": 25
+      },
+      {
+        "id": "code-8",
+        "title": "Take On Truth",
+        "prompt": "What boolean output is printed by this Python snippet?\n\nx = 7\ny = 4\nz = 10\n\nprint((x > y and z < 20) or not (x + y == z))",
+        "answer": [
+          "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b",
+          "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+        ],
+        "points": 25
       }
     ]
   },
   {
-    id: "deluxe-3",
-    title: "Arduino Circuit Sessions",
-    artist: "VIP Master Series",
-    description: "Exclusive Tier 3 Deluxe Challenge: Timer prescalers, SPI protocols, ADC quantum steps, and ISR vectors.",
-    accent: "#4cc9f0",
-    icon: "code",
-    coverImage: "deluxe3-cover.png",
-    coverZoom: "cover",
-    coverPosition: "center",
-    unlockThreshold: 1023,
-    isDeluxe: true,
-    questions: [
+    "id": "flag-session",
+    "title": "Flag Session",
+    "artist": "Base64 Battalion",
+    "description": "Decoding, base conversions, and hidden string flags.",
+    "accent": "#ff4fd8",
+    "icon": "flag",
+    "coverImage": "flag-cover.png",
+    "coverZoom": "cover",
+    "coverPosition": "center",
+    "questions": [
       {
-        id: "deluxe3-1",
-        title: "Time After Prescaler",
-        prompt: "An Arduino Uno runs at a system clock frequency of 16 MHz. Timer1 is configured with a prescaler of 64. What is the timer counter tick frequency in kilohertz (kHz)?",
-        answer: ["250", "250kHz", "250 kHz"],
-        points: 45
+        "id": "flag-caesar",
+        "title": "Caesar's Cipher O' Mine",
+        "prompt": "A Roman general flanks his enemies by shifting his soldiers 3 positions to the right. Mid-battle, his messenger drops an encoded scroll in the mud:\n\nDWWDFN WKH HQHPB DW GDZQ\n\nFind the general's lost message.",
+        "answer": [
+          "d15e38c8ef2c38aa569175a1e2bc9ed9bb6de772c0a5933524d1f60ddb297666",
+          "38e9b614384ab541ec90b4cafdd5cfaaefda04399fbf5313a05982a91c5da0a7"
+        ],
+        "points": 35
       },
       {
-        id: "deluxe3-2",
-        title: "Master of Signals",
-        prompt: "An Arduino communicates with an SD card module via SPI protocol. Which pin line transmits data from Arduino Master to the Slave device: MOSI or MISO?",
-        answer: ["MOSI", "mosi"],
-        points: 45
+        "id": "flag-binary-add",
+        "title": "Binary Add It",
+        "prompt": "Add the following binary numbers together, then convert the sum to decimal:\n\n1001011110101₂ + 110110101011₂",
+        "answer": [
+          "584f719804cbb166c42754a65f12a9fdae0e79cbcaabb1f7c90dc1c56c926484"
+        ],
+        "points": 35
       },
       {
-        id: "deluxe3-3",
-        title: "Quantum Step O' Mine",
-        prompt: "A 10-bit ADC on a 5.0V Arduino reference reads an analog sensor output. What is the voltage resolution (voltage per step) in millivolts (mV)? (Round to 2 decimal places)",
-        answer: ["4.88", "4.88mV", "4.88 mV", "4.89"],
-        points: 45
+        "id": "flag-2",
+        "title": "Hex on Fire",
+        "prompt": "Convert hex 0x9FC to binary and decimal.",
+        "multipleOutputs": [
+          {
+            "label": "Binary",
+            "answer": [
+              "c2ce1c4d177611726b87d7f5a4cddc0e00046230560df2b1cb76f48d499a13d3",
+              "05026ecf240c6cdd70a30d5983dd24a4958f083ae5048736ff229b257ece25f7"
+            ]
+          },
+          {
+            "label": "Decimal",
+            "answer": [
+              "213f6505c6c2a611fa8acf9e714cbb3037f19a2908adc6f77c7c795e04f8b733"
+            ]
+          }
+        ],
+        "points": 35
       },
       {
-        id: "deluxe3-4",
-        title: "Interrupt the Silence",
-        prompt: "On an Arduino Uno (ATmega328P), which external interrupt pin corresponds to INT0: Digital Pin 2 or Digital Pin 3?",
-        answer: ["2", "Digital Pin 2", "pin 2", "Pin 2"],
-        points: 45
+        "id": "flag-hex-vault",
+        "title": "Welcome to the Hex Vault",
+        "prompt": "0xBEE",
+        "answer": [
+          "59712c920a3cc7ca6887718c0dc5124b1f3e47b57d04e9e0ec9186e6d0a62f6b"
+        ],
+        "isHexVaultQuestion": true,
+        "points": 35
+      },
+      {
+        "id": "flag-morse",
+        "title": "Radioactive Morse",
+        "prompt": "Listen closely to the audio transmission from the play button above.\n\nWhat phrase is being transmitted?",
+        "answer": [
+          "a953ffa321fc2e75cb73436ea874a8a5dcb1e297705ff8a84c368cd9dfff56bd",
+          "0d79cf42411c64170c5026c9acd54e1eb50ef521cc262087b4666c22c479b6b2",
+          "36fe2c56b051d15fa8d43f5aa25019aafe566caf208c9fbe31fd4f9207d8f79c",
+          "72132ce3f7003efb15dc127d7bbc7af8daa2d5a7c030f6fa9db6cc80cf74c2eb"
+        ],
+        "isMorseQuestion": true,
+        "morseCode": ".... . .-.. .-.. --- / .-- . . -.",
+        "points": 37
+      },
+      {
+        "id": "flag-5",
+        "title": "Sweet Dreams of XOR",
+        "prompt": "XOR 1100 with 1010. What is the 4-bit binary result?",
+        "answer": [
+          "a5c3dd48facf21ed5f916d0ae979091fead570e6aea6c1d8038d1f68b26fa51f",
+          "9bdb2af6799204a299c603994b8e400e4b1fd625efdb74066cc869fee42c9df3"
+        ],
+        "points": 35
+      }
+    ]
+  },
+  {
+    "id": "treasure-trails",
+    "title": "Treasure Trails",
+    "artist": "Sir Vibesalot",
+    "description": "Treasure Hunt: Collect all key words from around the castle to unlock the final passcode vault.",
+    "accent": "#a78bfa",
+    "icon": "key",
+    "coverImage": "treasure-cover.png",
+    "unlockThreshold": 500,
+    "questions": [
+      {
+        "id": "treasure-1",
+        "title": "Eye of the Passcode",
+        "prompt": "Collect all the key words from around the castle to assemble the passcode! Descend to the castle's lowest halls where the coldest spring grants relief to the passing traveller.",
+        "answer": [
+          "e80525d6776526c947ead7f6a8f2c5b08bf7178e63fab24a036e1449eb48ae8b",
+          "732c7a79b66817e36017bc2bb019e9fa1f9ec3ca3f1d50b6ee3900c3d8f11b04",
+          "a12892d7a2a6c27403e492bb2408ac68977e5f9abd4f30a60118f5edb70087d2",
+          "e49cfd14f90d43082e5204253cf310a399bcab21051d0a5082cc4a5fab053504"
+        ],
+        "points": 200
+      }
+    ]
+  },
+  {
+    "id": "deluxe-1",
+    "title": "Logic Gate Symphony",
+    "artist": "VIP Master Series",
+    "description": "Exclusive Tier 1 Deluxe Challenge: Multi-stage gate networks, cascaded parity, and wire fault analysis.",
+    "accent": "#ffd166",
+    "icon": "gates",
+    "coverImage": "deluxe1-cover.png",
+    "coverZoom": "cover",
+    "coverPosition": "center",
+    "unlockThreshold": 350,
+    "isDeluxe": true,
+    "questions": [
+      {
+        "id": "deluxe1-1",
+        "title": "Seven Nation Network",
+        "prompt": "A 3-level logic gate network has inputs A, B, C, D. An XOR gate takes (A, B). A NOR gate takes (C, D). The outputs of both gates feed into a final NAND gate. Which Boolean expression matches this circuit output Y?",
+        "answer": [
+          "9c0a919d7460437a564a3872be1f257fe60d24bced2542c33154d3bd8eaed5e2",
+          "ed5fff6f249ee633bd53e09a0f1919e4f21a68df0c31ff2676f43d34a901f558",
+          "e6fd7592638936c70ba23d6c0d2b3390aa61a46b2793701387e796a79ad7af6f",
+          "23fc47125660b491115aa61913ad557795eff3479400f337bbc13c804af25ef4",
+          "9c0a919d7460437a564a3872be1f257fe60d24bced2542c33154d3bd8eaed5e2",
+          "5b12f0452b1a525c311c02b2eeb15db807e358d6c9d594a0620e8da56da6a440"
+        ],
+        "points": 35
+      },
+      {
+        "id": "deluxe1-2",
+        "title": "Parity Like It's 1999",
+        "prompt": "A 3-bit odd parity generator circuit (Output Y = 1 when total number of 1s in A, B, C is odd) uses two 2-input logic gates in series: Gate 1 takes (A, B), and Gate 2 takes (Output of Gate 1, C). An engineer mistakenly used an XNOR gate for Gate 2 instead of an XOR gate. Which single gate is incorrect?",
+        "answer": [
+          "1fcc83b56d040ef95baae2733904c58a22bb4a843c21d770a6092d9995affd05",
+          "1fcc83b56d040ef95baae2733904c58a22bb4a843c21d770a6092d9995affd05",
+          "30fca33be638a1cd277cb2b1f4b1ad68fda0d0ec4bc8bae17a0b95065502bc8a",
+          "abac4a98c3ffdd4904f673ca142010f42e8c2308f8c449f6ddda10275394bfe6",
+          "2617153e89b513344586a4b55718aafdcb334a5060640d8f064356e81095cf1a",
+          "66dc24ad7ed3d772af661944ca6ef66577a343f2b365fc2eebaad02b50154ded"
+        ],
+        "points": 35
+      },
+      {
+        "id": "deluxe1-3",
+        "title": "Highway to MUX",
+        "prompt": "In an active-high 4-to-1 Multiplexer with Select lines (S1, S0) driving 4 internal AND gates, an engineer wants to route Input I2 (binary 10) to output when S1=1, S0=0. However, Gate 2 receives (I2, S1, S0) instead of (I2, S1, S0'). Which one select wire (S1 or S0) is connected directly without an inverter, causing the wrong selection?",
+        "answer": [
+          "ec18eac8d758b1eba52d3c10d39adc6dd9806472cb4ae069635d383d9086a513",
+          "ec18eac8d758b1eba52d3c10d39adc6dd9806472cb4ae069635d383d9086a513",
+          "33c6ef9aff2adfc031cd35b7da4f9bbd625173e5f1f768d4006299c7707e7f0b",
+          "a5e61632da9b504433c619079da57acde6bd4082aa4ff330cebdaee2eb49166f",
+          "8e2117dd78fa0caac03acf61b30ba9902efeee4e040f4e8e87319b5ad077864e"
+        ],
+        "points": 35
+      },
+      {
+        "id": "deluxe1-4",
+        "title": "Livin' on a Combinational",
+        "prompt": "Consider a 4-input logic function Y = (A · B)' · (C ⊕ D). Out of all 16 possible 4-bit binary input combinations (ABCD), how many input combinations produce a HIGH (1) output?",
+        "answer": [
+          "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683"
+        ],
+        "points": 35
+      },
+      {
+        "id": "deluxe1-5",
+        "title": "Masked Variable in the Dark",
+        "prompt": "Evaluate the 4-input Boolean function: Y = A · B + A · B' + (C ⊕ C') · D · 0. Simplifying this circuit shows one or more inputs are completely masked. Which input (A, B, C, or D) has no effect on the output?",
+        "answer": [
+          "3e23e8160039594a33894f6564e1b1348bbd7a0088d42c4acb73eeaed59c009d",
+          "3e23e8160039594a33894f6564e1b1348bbd7a0088d42c4acb73eeaed59c009d",
+          "2e7d2c03a9507ae265ecf5b5356885a53393a2029d241394997265a1a25aefc6",
+          "2e7d2c03a9507ae265ecf5b5356885a53393a2029d241394997265a1a25aefc6",
+          "18ac3e7343f016890c510e93f935261169d9e3f565436429830faf0934f4f8e4",
+          "18ac3e7343f016890c510e93f935261169d9e3f565436429830faf0934f4f8e4",
+          "3682bf62a03a00cc8be0dc8c722eee8e2ce09524cd9b1513c55d6fce5a0f5324"
+        ],
+        "points": 35
+      },
+      {
+        "id": "deluxe1-6",
+        "title": "Ignition (Remix Vector)",
+        "prompt": "An active-high emergency beacon LED is driven by Y = (A · B) + (C · D'). Which 4-bit binary input vector (ABCD) with A=1, B=1, C=0, D=1 is guaranteed to turn the LED ON?",
+        "answer": [
+          "36ab771eba23f49d7ae43af88c601f3de8fccb201250906a4085444ae765f2db",
+          "9fd08a6089a92f82c12ec15a466c09339c67a9759e9b95bc52db4644f90b60c5",
+          "d8dd9291e787a3c6af09f6620c436bcc4924bce977d7a4601078b62709ec1408"
+        ],
+        "points": 35
+      }
+    ]
+  },
+  {
+    "id": "deluxe-2",
+    "title": "Logic Circuit Suite",
+    "artist": "VIP Master Series",
+    "description": "Exclusive Tier 2 Deluxe Challenge: Ripple carry delays, priority encoders, synchronous counters, and SR latch hazards.",
+    "accent": "#ff4fd8",
+    "icon": "circuit",
+    "coverImage": "deluxe2-cover.png",
+    "coverZoom": "cover",
+    "coverPosition": "center",
+    "unlockThreshold": 750,
+    "isDeluxe": true,
+    "questions": [
+      {
+        "id": "deluxe2-1",
+        "title": "Ripple Carry in the Deep",
+        "prompt": "A 4-bit Ripple Carry Adder consists of 4 cascaded Full Adders. If each Full Adder has a propagation delay of 12 nanoseconds (ns) for the carry signal to stabilize, what is the total worst-case propagation delay in nanoseconds (ns) for the final Carry-Out to stabilize?",
+        "answer": [
+          "98010bd9270f9b100b6214a21754fd33bdc8d41b2bc9f9dd16ff54d3c34ffd71",
+          "a688d50ac070d04df73ffb168a36d5084d60759be2eda18656db53d1b1640650",
+          "a87d27c38ad8f455de84777d282d656b72b9f49bccdaf33d0d8f5c1fbe0fe40b"
+        ],
+        "points": 40
+      },
+      {
+        "id": "deluxe2-2",
+        "title": "Encoder of the Night",
+        "prompt": "A 4-to-2 Priority Encoder receives active-high inputs (D3, D2, D1, D0) where D3 has highest priority. If the input vector is D3=0, D2=1, D1=1, D0=1, what 2-bit binary output (Y1 Y0) will the encoder produce?",
+        "answer": [
+          "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5",
+          "a6388de74e5670c0eaa120a0da18b98f80e65e1d95abbbea3e859a60fefd7acb",
+          "8fad34bbb0c1ed095fbf1b50cb0e48785a030d5af68dc1a4957cbb583c3c1e5a"
+        ],
+        "points": 40
+      },
+      {
+        "id": "deluxe2-3",
+        "title": "Count On Me",
+        "prompt": "A 3-bit modulo-8 binary up-counter is initialized at state 101₂ (decimal 5). After 4 active clock pulses, what is the 3-bit binary state of the counter?",
+        "answer": [
+          "7a3e6b16cb75f48fb897eff3ae732f3154f6d203b53f33660f01b4c3b6bc2df9",
+          "2aa2dd5bb3c6a37be969d98fbd47cd085b1f78d52403b970176271d779ebb2f6",
+          "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+        ],
+        "points": 40
+      },
+      {
+        "id": "deluxe2-4",
+        "title": "Latch Me If You Can",
+        "prompt": "In an active-HIGH NOR-based SR Latch, what binary input combination (S, R) causes an unstable / invalid forbidden state where both Q and Q' outputs are forced to 0?",
+        "answer": [
+          "4fc82b26aecb47d2868c4efbe3581732a3e7cbcc6c2efb32062c08170a05eeb8",
+          "2ec20c6a0b51bc2f76547894811ae93ca79746f157ed9cc882b0a23984e0eed0",
+          "28af97a6014e78031377adee6757c19213d8dd936ba57c005747019757e1f3b4",
+          "03ebfc2d40db30128bccfcea3aa3e32abd00335d2054f06631f31fe711a3be58",
+          "020a7c91e30725bb191818987340dec6040aff93923840de685e1e1d7b3d071a"
+        ],
+        "points": 40
+      }
+    ]
+  },
+  {
+    "id": "deluxe-3",
+    "title": "Arduino Circuit Sessions",
+    "artist": "VIP Master Series",
+    "description": "Exclusive Tier 3 Deluxe Challenge: Timer prescalers, SPI protocols, ADC quantum steps, and ISR vectors.",
+    "accent": "#4cc9f0",
+    "icon": "code",
+    "coverImage": "deluxe3-cover.png",
+    "coverZoom": "cover",
+    "coverPosition": "center",
+    "unlockThreshold": 1023,
+    "isDeluxe": true,
+    "questions": [
+      {
+        "id": "deluxe3-1",
+        "title": "Time After Prescaler",
+        "prompt": "An Arduino Uno runs at a system clock frequency of 16 MHz. Timer1 is configured with a prescaler of 64. What is the timer counter tick frequency in kilohertz (kHz)?",
+        "answer": [
+          "1e472b39b105d349bcd069c4a711b44a2fffb8e274714bb07ecfff69a9a7f67b",
+          "6029e1fe198f07f7f9ed96bf194db620dc0fed8792a848034e83d80802d2f323",
+          "5e2ea5e97182c28d1d326a5504ffe50e711e4fbb250bd2ea25eb5686dc45d828"
+        ],
+        "points": 45
+      },
+      {
+        "id": "deluxe3-2",
+        "title": "Master of Signals",
+        "prompt": "An Arduino communicates with an SD card module via SPI protocol. Which pin line transmits data from Arduino Master to the Slave device: MOSI or MISO?",
+        "answer": [
+          "43c32458f48b0a4949db9583fbaa1d799d8b9a1708dffe7044a32fdb308d54b8",
+          "43c32458f48b0a4949db9583fbaa1d799d8b9a1708dffe7044a32fdb308d54b8"
+        ],
+        "points": 45
+      },
+      {
+        "id": "deluxe3-3",
+        "title": "Quantum Step O' Mine",
+        "prompt": "A 10-bit ADC on a 5.0V Arduino reference reads an analog sensor output. What is the voltage resolution (voltage per step) in millivolts (mV)? (Round to 2 decimal places)",
+        "answer": [
+          "789578fecdf3bf425f5fe059e67372282f0b1b4c40c2dc9a40a7ee9cfa435f47",
+          "38f71394b7e5bf51df4ce9fc6c5a0bfc5c89865061d52e4b98806fde85083464",
+          "2bf254528361eeb65675bde0ae521c38b865bda332ec66f4e0496d377a1396d9",
+          "470ec1d1b1d728ee08264ab91c824270f47dca29beb2ccc1808be206d9c5a9eb"
+        ],
+        "points": 45
+      },
+      {
+        "id": "deluxe3-4",
+        "title": "Interrupt the Silence",
+        "prompt": "On an Arduino Uno (ATmega328P), which external interrupt pin corresponds to INT0: Digital Pin 2 or Digital Pin 3?",
+        "answer": [
+          "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+          "2a21a5a32e0147fbb5cffdd727229a374ffc8bab85f9b947a799841d947d705a",
+          "b2951eb2397bb3933ceab5c4556511e09d4c6413fb8f3a28ba3b85ca8957c6b4",
+          "b2951eb2397bb3933ceab5c4556511e09d4c6413fb8f3a28ba3b85ca8957c6b4"
+        ],
+        "points": 45
       }
     ]
   }
