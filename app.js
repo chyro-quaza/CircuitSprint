@@ -705,7 +705,7 @@ const pathways = [
     id: "treasure-trails",
     title: "Treasure Trails",
     artist: "Sir Vibesalot",
-    description: "Single release challenge: unlock the final passcode vault.",
+    description: "Treasure Hunt: Collect all key words from around the castle to unlock the final passcode vault.",
     accent: "#a78bfa",
     icon: "key",
     coverImage: "treasure-cover.png",
@@ -714,7 +714,7 @@ const pathways = [
       {
         id: "treasure-1",
         title: "Eye of the Passcode",
-        prompt: "Descend to the castle's lowest halls where the coldest spring grants relief to the passing traveller",
+        prompt: "Collect all the key words from around the castle to assemble the passcode! Descend to the castle's lowest halls where the coldest spring grants relief to the passing traveller.",
         answer: [
           "by the power of greyskull",
           "by the power of grayskull",
@@ -1382,16 +1382,20 @@ function _renderActiveQuestionContent(pathway, questionIndex) {
   if (pathway.id === "treasure-trails") {
     activeSection.innerHTML = `
       <div class="treasure-prompt-header" style="margin-bottom: 1.25rem;">
-        <span class="clue-header-badge">FINAL VAULT CLUE</span>
+        <span class="clue-header-badge">FINAL VAULT CLUE & TREASURE HUNT</span>
         <h2 style="font-size: 1.35rem; font-weight: 800; color: #ffffff; margin: 0.4rem 0 0.5rem;">${question.title}</h2>
         <p class="treasure-prompt-text" style="font-size: 1rem; color: #e0e0e0; font-family: Georgia, serif; font-style: italic; line-height: 1.5; margin: 0;">"${question.prompt}"</p>
+        <div style="margin-top: 0.85rem; background: rgba(167, 139, 250, 0.12); border: 1px dashed rgba(167, 139, 250, 0.45); border-radius: 8px; padding: 0.75rem 1rem; font-size: 0.9rem; color: #d8b4fe; font-weight: 600; display: flex; align-items: center; gap: 0.6rem;">
+          <span style="font-size: 1.2rem; flex-shrink: 0;">🏰</span>
+          <span><strong>Treasure Hunt Rule:</strong> Collect all the key words hidden around the castle to assemble the full passcode!</span>
+        </div>
       </div>
 
       <div class="grand-vault-card medieval-vault ${solved ? "solved" : ""}">
         <div class="vault-header">
           <div>
             <h3 class="vault-title">Passcode Vault</h3>
-            <p class="vault-subtitle">Enter ancient passcode below to unlock</p>
+            <p class="vault-subtitle">Collect all key words from around the castle to unlock the vault</p>
           </div>
         </div>
         <form class="vault-form" data-question-id="${question.id}">
