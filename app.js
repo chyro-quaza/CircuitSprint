@@ -1895,7 +1895,7 @@ function setupHexVaultListener(activeSection, question, pathway, questionIndex =
     });
   });
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
     if (isPenaltyActive()) return;
 
@@ -1908,8 +1908,9 @@ function setupHexVaultListener(activeSection, question, pathway, questionIndex =
       return;
     }
 
-    const userVal = input.value.trim();
-    const isCorrect = question.answer.includes(userVal);
+    const userVal = input.value.trim().toLowerCase();
+    const userHash = await sha256(userVal);
+    const isCorrect = question.answer.includes(userHash);
 
     if (isCorrect) {
       triggerConfetti(checkBtn);
@@ -1937,7 +1938,7 @@ function setupFormListener(activeSection, question, pathway, questionIndex = 0) 
 
   bindVirtualKeypad(activeSection, () => answerInput);
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
     if (isPenaltyActive()) return;
 
@@ -1951,9 +1952,10 @@ function setupFormListener(activeSection, question, pathway, questionIndex = 0) 
     }
 
     const val = answerInput ? answerInput.value.trim().toLowerCase() : "";
+    const valHash = await sha256(val);
     const isCorrect = Array.isArray(question.answer)
-      ? question.answer.some((ans) => ans.toLowerCase() === val)
-      : question.answer.toLowerCase() === val;
+      ? question.answer.includes(valHash)
+      : question.answer === valHash;
 
     if (isCorrect) {
       triggerConfetti(checkBtn);
@@ -1978,7 +1980,7 @@ function setupMultiOutputFormListener(activeSection, question, pathway, question
 
   const checkBtn = form.querySelector("button[type='submit']") || form.querySelector("button");
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
     if (isPenaltyActive()) return;
 
@@ -1993,10 +1995,11 @@ function setupMultiOutputFormListener(activeSection, question, pathway, question
 
     const inputs = Array.from(form.querySelectorAll(".multi-output-input"));
     const userVals = inputs.map((inp) => inp.value.trim().toLowerCase());
+    const userHashes = await Promise.all(userVals.map((v) => sha256(v)));
 
     const allCorrect = question.multipleOutputs.every((expected, idx) => {
-      const val = userVals[idx];
-      return expected.answer.some((ans) => ans.toLowerCase() === val);
+      const uHash = userHashes[idx];
+      return expected.answer.includes(uHash);
     });
 
     if (allCorrect) {
@@ -2052,7 +2055,7 @@ function setupTruthTableListener(activeSection, question, pathway, questionIndex
 
   bindVirtualKeypad(activeSection, getTruthTableTarget);
 
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
     if (isPenaltyActive()) return;
 
@@ -2073,9 +2076,10 @@ function setupTruthTableListener(activeSection, question, pathway, questionIndex
     }
 
     const userVals = inputs.map((inp) => inp.value.trim().toLowerCase());
+    const userHashes = await Promise.all(userVals.map((v) => sha256(v)));
     const isCorrect = question.answers.every((expectedGroup, idx) => {
-      const uVal = userVals[idx];
-      return expectedGroup.some((exp) => exp.toLowerCase() === uVal);
+      const uHash = userHashes[idx];
+      return expectedGroup.includes(uHash);
     });
 
     if (isCorrect) {
