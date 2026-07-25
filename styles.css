@@ -1521,6 +1521,48 @@ body {
   40%, 80% { transform: rotate(10deg); }
 }
 
+/* Pixelated Trophy Badge & Icons */
+.pixel-trophy-icon {
+  width: 1.4rem;
+  height: 1.4rem;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 0 6px rgba(255, 209, 102, 0.7));
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.trophy-badge-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 209, 102, 0.12);
+  border: 1px solid rgba(255, 209, 102, 0.45);
+  color: #ffd166;
+  padding: 0.3rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: 0 0 10px rgba(255, 209, 102, 0.15);
+}
+
+.trophy-badge-wrap.mastered {
+  background: rgba(255, 209, 102, 0.25);
+  border-color: #ffd166;
+  color: #ffffff;
+  box-shadow: 0 0 14px rgba(255, 209, 102, 0.35);
+}
+
+.deluxe-trophy-overlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 5;
+  background: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(4px);
+}
+
 
 
 
