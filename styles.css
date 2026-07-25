@@ -1568,16 +1568,21 @@ body {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4) !important;
 }
 
-.pathway-card.deluxe-box-card.completed .album-copy h3,
-.pathway-card.deluxe-box-card.completed .card-meta span {
+.pathway-card.deluxe-box-card.completed .album-copy h3 {
   color: #000000 !important;
   font-weight: 800 !important;
 }
 
 .pathway-card.deluxe-box-card.completed .tag {
-  background: rgba(0, 0, 0, 0.2) !important;
+  background: transparent !important;
+  border: none !important;
+  color: rgba(0, 0, 0, 0.75) !important;
+  font-weight: 700 !important;
+}
+
+.pathway-card.deluxe-box-card.completed .tag.alt {
   color: #000000 !important;
-  border: 1px solid rgba(0, 0, 0, 0.35) !important;
+  font-weight: 800 !important;
 }
 
 
