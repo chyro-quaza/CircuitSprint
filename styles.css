@@ -1527,7 +1527,6 @@ body {
   width: 1.4rem;
   height: 1.4rem;
   image-rendering: pixelated;
-  filter: drop-shadow(0 0 6px rgba(255, 209, 102, 0.7));
   display: inline-block;
   vertical-align: middle;
 }
@@ -1545,14 +1544,12 @@ body {
   font-weight: 800;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  box-shadow: 0 0 10px rgba(255, 209, 102, 0.15);
 }
 
 .trophy-badge-wrap.mastered {
   background: rgba(255, 209, 102, 0.25);
   border: 1px solid #ffd166;
   color: #ffffff;
-  box-shadow: 0 0 14px rgba(255, 209, 102, 0.4);
 }
 
 .deluxe-trophy-overlay {
@@ -1568,7 +1565,7 @@ body {
 .pathway-card.deluxe-box-card.completed {
   background: linear-gradient(135deg, #ffd166 0%, #b8860b 50%, #d4af37 100%) !important;
   border: 2px solid #ffd166 !important;
-  box-shadow: 0 0 30px rgba(255, 209, 102, 0.5), inset 0 0 15px rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4) !important;
 }
 
 .pathway-card.deluxe-box-card.completed .album-copy h3,
