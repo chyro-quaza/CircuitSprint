@@ -866,15 +866,8 @@ body {
 }
 
 .question-card.solved {
-  border: 2px dotted var(--green);
+  border-color: rgba(30, 215, 96, 0.35);
   background: rgba(30, 215, 96, 0.04);
-}
-
-.question-card.solved .feedback {
-  border: 1px dotted var(--green);
-  background: rgba(30, 215, 96, 0.1);
-  padding: 0.75rem 1rem;
-  border-radius: 6px;
 }
 
 .question-card h3 {
@@ -1155,7 +1148,6 @@ body {
 
 .track-row.solved {
   color: var(--green);
-  border-left: 3px dotted var(--green);
 }
 
 .track-row.locked {
@@ -1558,7 +1550,7 @@ body {
 
 .trophy-badge-wrap.mastered {
   background: rgba(255, 209, 102, 0.25);
-  border: 1.5px dotted #ffd166;
+  border: 1px solid #ffd166;
   color: #ffffff;
   box-shadow: 0 0 14px rgba(255, 209, 102, 0.4);
 }
@@ -1575,7 +1567,7 @@ body {
 /* Golden Background for Completed Deluxe Albums */
 .pathway-card.deluxe-box-card.completed {
   background: linear-gradient(135deg, #ffd166 0%, #b8860b 50%, #d4af37 100%) !important;
-  border: 2px dotted #ffd166 !important;
+  border: 2px solid #ffd166 !important;
   box-shadow: 0 0 30px rgba(255, 209, 102, 0.5), inset 0 0 15px rgba(255, 255, 255, 0.3) !important;
 }
 
@@ -1588,7 +1580,7 @@ body {
 .pathway-card.deluxe-box-card.completed .tag {
   background: rgba(0, 0, 0, 0.2) !important;
   color: #000000 !important;
-  border: 1px dotted rgba(0, 0, 0, 0.4) !important;
+  border: 1px solid rgba(0, 0, 0, 0.35) !important;
 }
 
 
