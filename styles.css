@@ -1208,7 +1208,7 @@ body {
   background: var(--active-accent, var(--green));
 }
 
-.now-playing span,
+#nowPlayingTitle,
 .now-playing strong {
   display: block;
   overflow: hidden;
@@ -1216,9 +1216,13 @@ body {
   white-space: nowrap;
 }
 
-.now-playing span {
+#nowPlayingTitle {
   font-weight: 850;
   font-size: 0.9rem;
+}
+
+#nowPlayingTitle .title-dot {
+  display: inline-block !important;
 }
 
 .now-playing strong {
