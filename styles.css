@@ -1530,17 +1530,17 @@ body {
   border-color: var(--pink);
 }
 
-/* Highly Appealing Black & White Cooldown Badge & Progress Bar */
+/* Vibrant Red Cooldown Badge & Progress Bar for Penalty Delay */
 .cooldown-badge-wrap {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px dashed rgba(255, 255, 255, 0.35);
+  background: rgba(255, 90, 95, 0.08);
+  border: 1px dashed rgba(255, 90, 95, 0.45);
   border-radius: 8px;
   padding: 0.75rem 1rem;
   margin-top: 0.75rem;
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 14px rgba(255, 90, 95, 0.15);
 }
 
 .cooldown-badge-header {
@@ -1549,7 +1549,7 @@ body {
   gap: 0.5rem;
   font-size: 0.8rem;
   font-weight: 800;
-  color: #ffffff;
+  color: var(--red, #ff5a5f);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -1557,21 +1557,21 @@ body {
 .cooldown-lock-icon {
   display: inline-block;
   animation: padlock-shake 1.5s infinite alternate;
-  color: #ffffff;
+  color: var(--red, #ff5a5f);
 }
 
 .cooldown-progress-track {
   width: 100%;
-  height: 3px;
-  background: rgba(255, 255, 255, 0.15);
+  height: 4px;
+  background: rgba(255, 90, 95, 0.2);
   border-radius: 2px;
   overflow: hidden;
 }
 
 .cooldown-progress-bar {
   height: 100%;
-  background: #ffffff;
-  box-shadow: 0 0 8px #ffffff;
+  background: linear-gradient(90deg, #ff5a5f, #ff2a2f);
+  box-shadow: 0 0 10px rgba(255, 90, 95, 0.6);
   border-radius: 2px;
   transition: width 0.05s linear;
 }
@@ -1580,6 +1580,24 @@ body {
   0%, 100% { transform: rotate(0); }
   20%, 60% { transform: rotate(-10deg); }
   40%, 80% { transform: rotate(10deg); }
+}
+
+/* Card Shake Animation on Wrong Answer Submission */
+@keyframes cardShake {
+  0%, 100% { transform: translateX(0); }
+  15%, 45%, 75% { transform: translateX(-7px); }
+  30%, 60%, 90% { transform: translateX(7px); }
+}
+
+.shake-card {
+  animation: cardShake 0.45s ease-in-out !important;
+  border-color: var(--red, #ff5a5f) !important;
+  box-shadow: 0 0 20px rgba(255, 90, 95, 0.4) !important;
+}
+
+.question-card.in-cooldown {
+  border-color: rgba(255, 90, 95, 0.5) !important;
+  box-shadow: 0 0 14px rgba(255, 90, 95, 0.2) !important;
 }
 
 /* Pixelated Trophy Badge & Icons */
